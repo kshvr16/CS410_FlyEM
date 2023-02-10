@@ -9,7 +9,7 @@ General Update and Intro
 * Talked to TA and discussed about the current project status and the tasks needs to be done
 * Agreed to use Jupyter notebook as environment setup for implementation
 * Created GitHub repo: https://github.com/kshvr16/CS410_FlyEM
-
+* Granted access to chimera computing cluster for the data accessibility
 
 Draft of Requirements
 =========================
@@ -36,7 +36,7 @@ Current Questions / Problems / Something you need
 
 
 List of Working Packages with responsible Student and Completion Dates
-========================================================================
+==========================================================================
 * Explore Image dataset [Nikhila Yadav Lankela] by 2/15
 * Understand previous techniques, implementation, results [Sai Harahavardhan Kona] by 2/15
 * Explore Noise Removal Techniques and Contrast adjustments [Varshitha Hantur Dinakar + Varuni Manjunath] by 2/15
