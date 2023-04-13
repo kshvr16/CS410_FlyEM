@@ -1,10 +1,9 @@
 import os
 import time
 import shutil
-
-import matplotlib.pyplot as plt
 import numpy as np
 import mahotas as mh
+import matplotlib.pyplot as plt
 from skimage import measure, filters
 
 
@@ -110,7 +109,7 @@ class ImageUtils:
         for region in region_sizes:
             if region.area > min_region_size:
                 large_regions += 1
-        if 100 <= nr_objects_binary <= 150 and large_regions <= 20:
+        if 15 <= nr_objects_binary <= 30 and 2 <= large_regions <= 5:
             return True
         else:
             return False
@@ -150,37 +149,3 @@ class ImageUtils:
     def display_image(image_data):
         plt.imshow(image_data)
         plt.show()
-
-    # import random
-    # from tqdm import tqdm
-    # def src2dest_copy(src_dir, dest_dir):
-    #     # copies all the ".tif" files from source dir to destination dir
-    #     for file in tqdm(sorted(os.listdir(src_dir))):
-    #         if file.endswith("tif"):
-    #             shutil.copy(os.path.join(src_dir, file), os.path.join(dest_dir, file))
-    #
-    #
-    # def src2dest_random_copy(src_dir, dest_dir, num_of_images):
-    #     # copies the given number of random images from source dir to destination dir
-    #     files = [file for file in tqdm(os.listdir(src_dir)) if file.endswith(".tif")]
-    #     selected_files = random.sample(files, num_of_images)
-    #     for file in tqdm(selected_files):
-    #         shutil.copy(os.path.join(src_dir, file), os.path.join(dest_dir, file))
-
-
-    # def segmentation_pipeline(original_image):
-    #     normalized_image = imageUtils.get_normalized_image(original_image)
-    #     cropped_image = imageUtils.get_cropped_image(normalized_image)
-    #     filtered_image = imageUtils.apply_gaussian_filter(cropped_image)
-    #     threshold_image = imageUtils.apply_threshold(filtered_image, threshold_value=55)
-    #     labeled, nr_objects = imageUtils.apply_region_labelling(threshold_image)
-    #     labeled_big = imageUtils.remove_small_regions(labeled, region_size=1500)
-    #     binary_mask = imageUtils.get_binary_mask(labeled_big)
-    #     binary_mask_closed = imageUtils.get_closed_binary_mask(binary_mask)
-    #     binary_image = imageUtils.get_binary_image(binary_mask_closed)
-
-    #     if imageUtils.verify_image_segmentation(binary_mask):
-    #         print("The image has a clear segmentation")
-    #     else:
-    #         print("The image doesn't have a clear segmentation")
-    #     return binary_image
